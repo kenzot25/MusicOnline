@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1069380272668",
+    "firebase_url": "https://music-app-87386-default-rtdb.asia-southeast1.firebasedatabase.app",
+    "project_id": "music-app-87386",
+    "storage_bucket": "music-app-87386.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1069380272668:android:6ef1a973d106ae12ebd5d9",
+        "android_client_info": {
+          "package_name": "com.toan.musicapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1069380272668-gm66l2npb2ma3u8hl7cv45caep5mk3ud.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBgWuOIh08VLl-712ItLV2ntzokbOzxCOg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1069380272668-gm66l2npb2ma3u8hl7cv45caep5mk3ud.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
