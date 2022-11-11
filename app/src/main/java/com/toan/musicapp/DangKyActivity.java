@@ -78,7 +78,7 @@ public class DangKyActivity extends AppCompatActivity {
                                 Toast.makeText(DangKyActivity.this, "Email xác thực đã được gửi", Toast.LENGTH_SHORT).show();
                                 String hashedPassword = BCrypt.withDefaults().hashToString(8, matKhau.toCharArray());
 
-                                final boolean isAdmin = false;
+                                final boolean isAdmin = true;
                                 if(!isAdmin) {
                                     NguoiDung nguoiDung = new NguoiDung(user.getUid(), tenHienThi, hashedPassword, email, default_icon);
                                     DAO_NguoiDung.addUser(nguoiDung, DangKyActivity.this);
