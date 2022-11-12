@@ -3,6 +3,7 @@ package com.toan.musicapp.DAOClass;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,23 +33,34 @@ public class DAO_Admin {
         bundle.putString("Email", email);
         bundle.putString("DisplayName", displayName);
         bundle.putString("Password", hashedPassword);
+        Log.d("Login","Run" + email + password);
         DatabaseReference myDatabaseRef = FirebaseDatabase.getInstance().getReference("Admin");
         myDatabaseRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
+                    Log.d("TEST", "RUN snapshot.exists()");
                     for (DataSnapshot i: snapshot.getChildren()){
+                        Log.d("TEST", "RUN for loop");
+
                         Admin admin = i.getValue(Admin.class);
+                        Log.d("TEST", admin.getEmail());
+                        Log.d("TEST", admin.getEmail() + email);
+
                         if (admin.getEmail().equals(email)){
+                            Log.d("TEST", "if statement");
+
                             bundle.putString("UserID", admin.getMaAdmin());
                             bundle.putString("PhotoURL", admin.getUrlAnh());
+                            Log.d("TEST", "if statement still run");
                             Intent intent = new Intent(context, MainActivity.class);
                             intent.putExtra("UserProfile", bundle);
                             context.startActivity(intent);
+                            Log.d("TEST", "if statement still run 2");
                             break;
                         }
                     }
-                    Toast.makeText(context, "Sai email hoặc mật khẩu", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(context, "Sai email hoặc mật khẩu", Toast.LENGTH_SHORT).show();
                 }
             }
 

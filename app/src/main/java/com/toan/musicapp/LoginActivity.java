@@ -190,7 +190,6 @@ public class LoginActivity extends AppCompatActivity {
         DAO_NguoiDung.loginAsFacebook(id, displayName, email, photoURL, LoginActivity.this);
     }
     private void saveUserAccount(String email, String password){
-        //LÆ°u tÃªn tÃ i khoáº£n vÃ  máº­t kháº©u ngÆ°á»i dÃ¹ng
         if (!email.isEmpty()&&!password.isEmpty()){
             SharedPreferences sp = getSharedPreferences("myAccount", MODE_PRIVATE);
             SharedPreferences.Editor editor = sp.edit();
@@ -204,7 +203,6 @@ public class LoginActivity extends AppCompatActivity {
             }
             editor.apply();
         }else{
-            //ThÃ´ng bÃ¡o khi nháº­p sai
         }
 
     }
@@ -244,6 +242,7 @@ public class LoginActivity extends AppCompatActivity {
     private void checkAccountVerification(){
         final String email = txtUserEmail.getText().toString();
         final String password = txtPassword.getText().toString();
+        Log.d("TK MK", email + password );
 //        Development
         ADMIN_STATUS = true;
         if (email.equals("AdminStatusTrue")){
@@ -264,11 +263,13 @@ public class LoginActivity extends AppCompatActivity {
             isLoggingIn = false;
             return;
         }
+        Log.d("D", String.valueOf(isLoggingIn));
         FirebaseAuth myFirebaseAuth = FirebaseAuth.getInstance();
         myFirebaseAuth.signInWithEmailAndPassword(email, password).addOnSuccessListener(new OnSuccessListener<AuthResult>() {
             @Override
             public void onSuccess(AuthResult authResult) {
                 FirebaseUser user = authResult.getUser();
+                Log.d("user", String.valueOf(user));
                 if (user.isEmailVerified()){
                     if (ADMIN_STATUS){
                         DAO_Admin.loginAsAdmin(user, LoginActivity.this, password);
@@ -284,7 +285,8 @@ public class LoginActivity extends AppCompatActivity {
         }).addOnFailureListener(new OnFailureListener() {
             @Override
             public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getBaseContext(), "Sai email hoặc mật khẩu!", Toast.LENGTH_SHORT).show();
+                Log.d("fail",e.toString());
+                Toast.makeText(getBaseContext(), "Invalid email or password", Toast.LENGTH_SHORT).show();
                 isLoggingIn = false;
             }
         });

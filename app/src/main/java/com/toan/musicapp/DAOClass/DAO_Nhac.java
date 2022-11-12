@@ -267,6 +267,7 @@ public class DAO_Nhac {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()) {
                     for (DataSnapshot i : snapshot.getChildren()) {
+//                        NEED TO UPDATE
                         Nhac nhac = i.getValue(Nhac.class);
                         dsn.add(nhac);
                     }

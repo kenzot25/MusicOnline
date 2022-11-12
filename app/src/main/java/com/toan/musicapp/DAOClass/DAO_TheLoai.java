@@ -51,6 +51,7 @@ public class DAO_TheLoai {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 if (snapshot.exists()){
                     for (DataSnapshot i: snapshot.getChildren()){
+//                        NEED TO UPDATE
                         TheLoai theLoai = i.getValue(TheLoai.class);
                         adapter.updateAdapter(theLoai);
                     }
