@@ -1,5 +1,6 @@
 package com.toan.musicapp.AdditionalFunctions;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.database.Cursor;
 import android.media.MediaMetadataRetriever;
@@ -49,6 +50,7 @@ public class AdditionalFunctions {
         return true;
     }
 
+    @SuppressLint("Range")
     public static String getFileName(Context context, Uri uri) {
         String result = null;
         if (uri.getScheme().equals("content")) {

@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -159,6 +160,7 @@ public class DialogThemVaCapNhatNhac extends DialogFragment implements UploadPro
         String tenNhac = txtTenNhac.getText().toString();
         String tenNgheSi = txtTenNgheSi.getText().toString();
         String theLoai = txtTheLoai.getText().toString();
+
         String thoiLuong = AdditionalFunctions.getAudioDuration(uri, getContext());
         if (AdditionalFunctions.isStringEmpty(getContext(), tenNhac, tenNgheSi, theLoai, thoiLuong)){
             return;

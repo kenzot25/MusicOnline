@@ -13,13 +13,17 @@ public class MusicApp extends Application {
         createNotificationChannel();
     }
     private void createNotificationChannel(){
-        NotificationChannel channel = new NotificationChannel(
-                CONTROLLER_CHANNEL,
-                "Bảng Điều Khiển",
-                NotificationManager.IMPORTANCE_DEFAULT
-        );
-        channel.setDescription("Bảng Điều Khiển");
-        NotificationManager manager = getSystemService(NotificationManager.class);
-        manager.createNotificationChannel(channel);
+        NotificationChannel channel = null;
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+            channel = new NotificationChannel(
+                    CONTROLLER_CHANNEL,
+                    "Bảng Điều Khiển",
+                    NotificationManager.IMPORTANCE_DEFAULT
+            );
+            channel.setDescription("Bảng Điều Khiển");
+            NotificationManager manager = getSystemService(NotificationManager.class);
+            manager.createNotificationChannel(channel);
+        }
+
     }
 }
