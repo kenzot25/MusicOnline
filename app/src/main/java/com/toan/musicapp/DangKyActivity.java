@@ -33,7 +33,7 @@ public class DangKyActivity extends AppCompatActivity {
     EditText txtUserDisplayName, txtUserPassword, txtUserEmail, txtUserReconfirmPassword;
     Button btnRegister;
     FirebaseAuth myFirebaseAuth = FirebaseAuth.getInstance();
-    String default_icon = "https://firebasestorage.googleapis.com/v0/b/musicdatabase-a467c.appspot.com/o/NguoiDung%2Fdefault_user_icon.png?alt=media&token=c8ef3e28-1f5d-40cb-9543-7d325fb26204";
+    String default_icon = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQa0PewBfIvXFkO6FUKjCrbs1gRFjv-Bc2eReJAw_4&s";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +80,7 @@ public class DangKyActivity extends AppCompatActivity {
                                 Toast.makeText(DangKyActivity.this, "Email xác thực đã được gửi", Toast.LENGTH_SHORT).show();
                                 String hashedPassword = BCrypt.withDefaults().hashToString(8, matKhau.toCharArray());
 
-                                final boolean isAdmin = true;
+                                final boolean isAdmin = false;
                                 if(!isAdmin) {
                                     NguoiDung nguoiDung = new NguoiDung(user.getUid(), tenHienThi, hashedPassword, email, default_icon);
                                     DAO_NguoiDung.addUser(nguoiDung, DangKyActivity.this);

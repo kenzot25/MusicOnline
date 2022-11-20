@@ -6,6 +6,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.FragmentManager;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -240,6 +241,7 @@ public class MainActivity extends AppCompatActivity {
         }
         nguoiDung = new NguoiDung();
         String photoURL = bundle.getString("PhotoURL");
+        Log.d("photoURL",photoURL);
         nguoiDung.setMaNguoiDung(bundle.getString("UserID"));
         nguoiDung.setEmail(bundle.getString("Email"));
         nguoiDung.setTenHienThi(bundle.getString("DisplayName"));

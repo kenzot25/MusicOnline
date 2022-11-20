@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
         final String password = txtPassword.getText().toString();
         Log.d("TK MK", email + password );
 //        Development
-        ADMIN_STATUS = true;
+//        ADMIN_STATUS = true;
         if (email.equals("AdminStatusTrue")){
             Toast.makeText(this, "Chế độ login admin", Toast.LENGTH_SHORT).show();
             ADMIN_STATUS = true;
