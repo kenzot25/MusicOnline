@@ -91,10 +91,12 @@ public class LoginActivity extends AppCompatActivity {
         if (email.equals("AdminStatusTrue")){
             Toast.makeText(this, "Chế độ login admin", Toast.LENGTH_SHORT).show();
             ADMIN_STATUS = true;
+            isLoggingIn = false;
             return;
         }else if (email.equals("AdminStatusFalse")){
             Toast.makeText(this, "Chế độ login bình thường", Toast.LENGTH_SHORT).show();
             ADMIN_STATUS = false;
+            isLoggingIn = false;
             return;
         }
         if (
@@ -125,7 +127,6 @@ public class LoginActivity extends AppCompatActivity {
             isLoggingIn = false;
         }).addOnFailureListener(e -> {
             Log.d("onFailure","onFailure");
-
             Log.d("fail",e.toString());
             Toast.makeText(getBaseContext(), "Invalid email or password", Toast.LENGTH_SHORT).show();
             isLoggingIn = false;

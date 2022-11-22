@@ -447,7 +447,7 @@ public class NhacDangNgheFragment extends Fragment implements PlaylistDangNghe_r
                 .setLargeIcon(background)
                 .addAction(R.drawable.ic_skip_previous, "SkipToPrevious", pendingIntent1)
                 .addAction(playAndPauseImage, "PlayAndPause", pendingIntent2)
-                .addAction(R.drawable.ic_skip_next_red, "SkipToNext", pendingIntent3)
+                .addAction(R.drawable.ic_skip_next, "SkipToNext", pendingIntent3)
                 .setStyle(new androidx.media.app.NotificationCompat.MediaStyle()
                         .setMediaSession(mediaSessionCompat.getSessionToken())
                         .setShowActionsInCompactView(0, 1, 2))
@@ -467,13 +467,13 @@ public class NhacDangNgheFragment extends Fragment implements PlaylistDangNghe_r
 
     public void playAndPauseMusic() {
         if (adapterPlaylistDangNghe.playAndPauseMusic()) {
-            ivChayVaDung.setImageResource(R.drawable.ic_play_arrow_red);
-            ((MainActivity) getContext()).setPlayAndPauseButtonImage(R.drawable.ic_play_arrow_red);
+            ivChayVaDung.setImageResource(R.drawable.ic_play_arrow);
+            ((MainActivity) getContext()).setPlayAndPauseButtonImage(R.drawable.ic_play_arrow);
             mcOnPause();
             animator.pause();
         } else {
-            ivChayVaDung.setImageResource(R.drawable.ic_pause_red);
-            ((MainActivity) getContext()).setPlayAndPauseButtonImage(R.drawable.ic_pause_red);
+            ivChayVaDung.setImageResource(R.drawable.ic_pause);
+            ((MainActivity) getContext()).setPlayAndPauseButtonImage(R.drawable.ic_pause);
             mcOnStart();
             animator.resume();
         }
@@ -580,11 +580,11 @@ public class NhacDangNgheFragment extends Fragment implements PlaylistDangNghe_r
     public void onMediaPrepared() {
         sbNhacDangNghe.setEnabled(true);
         ivChayVaDung.setClickable(true);
-        ivChayVaDung.setImageResource(R.drawable.ic_pause_red);
+        ivChayVaDung.setImageResource(R.drawable.ic_pause);
         animator.start();
-        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause_red);
+        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause);
         MainActivity mainActivity = (MainActivity)getContext();
-        mainActivity.setPlayAndPauseButtonImage(R.drawable.ic_pause_red);
+        mainActivity.setPlayAndPauseButtonImage(R.drawable.ic_pause);
         mainActivity.setPlayAndPauseButtonEnabled(true);
         mainActivity.setSeekBarVisibility(View.VISIBLE);
     }
@@ -594,14 +594,14 @@ public class NhacDangNgheFragment extends Fragment implements PlaylistDangNghe_r
         MainActivity mainActivity = (MainActivity)getContext();
         mainActivity.setSeekBarVisibility(View.VISIBLE);
         mainActivity.setPlayAndPauseButtonEnabled(false);
-        mainActivity.setPlayAndPauseButtonImage(R.drawable.ic_play_arrow_red);
+        mainActivity.setPlayAndPauseButtonImage(R.drawable.ic_play_arrow);
     }
 
     @Override
     public void onMediaReleased() {
         sbNhacDangNghe.setEnabled(false);
         ivChayVaDung.setClickable(false);
-        ivChayVaDung.setImageResource(R.drawable.ic_play_arrow_red);
+        ivChayVaDung.setImageResource(R.drawable.ic_play_arrow);
         animator.pause();
         MainActivity mainActivity = (MainActivity) getContext();
         mainActivity.setSeekBarVisibility(View.INVISIBLE);
@@ -628,18 +628,18 @@ public class NhacDangNgheFragment extends Fragment implements PlaylistDangNghe_r
     @Override
     public void mcSkipToPrevious() {
         adapterPlaylistDangNghe.skipToPrevious();
-        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause_red);
+        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause);
     }
 
     @Override
     public void mcPlayAndPause() {
         if (adapterPlaylistDangNghe.playAndPauseMusic()) {
-            createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_play_arrow_red);
-            ivChayVaDung.setImageResource(R.drawable.ic_play_arrow_red);
+            createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_play_arrow);
+            ivChayVaDung.setImageResource(R.drawable.ic_play_arrow);
             animator.pause();
         } else {
-            createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause_red);
-            ivChayVaDung.setImageResource(R.drawable.ic_pause_red);
+            createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause);
+            ivChayVaDung.setImageResource(R.drawable.ic_pause);
             animator.start();
         }
     }
@@ -647,19 +647,19 @@ public class NhacDangNgheFragment extends Fragment implements PlaylistDangNghe_r
     @Override
     public void mcSkipToNext() {
         adapterPlaylistDangNghe.skipToNext();
-        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause_red);
+        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause);
     }
 
     @Override
     public void mcOnStart() {
-        ivChayVaDung.setImageResource(R.drawable.ic_pause_red);
-        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause_red);
+        ivChayVaDung.setImageResource(R.drawable.ic_pause);
+        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_pause);
     }
 
     @Override
     public void mcOnPause() {
-        ivChayVaDung.setImageResource(R.drawable.ic_play_arrow_red);
-        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_play_arrow_red);
+        ivChayVaDung.setImageResource(R.drawable.ic_play_arrow);
+        createNotificationChannelForController(adapterPlaylistDangNghe.getCurrentSong(), R.drawable.ic_play_arrow);
     }
 
     @Override

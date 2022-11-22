@@ -87,33 +87,38 @@
             android:textColor="@color/white"
             android:text="No Performer"
             android:layout_below="@id/txtTenNhac"/>
+
         <ImageView
             android:id="@+id/ivSangKeTiep"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_skip_next_red"
+            android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
-            android:background="@drawable/white_rounded_background"
-            android:layout_alignParentRight="true"/>
+            android:src="@drawable/ic_skip_next"
+            app:srcCompat="@android:drawable/ic_media_next"
+            tools:srcCompat="@android:drawable/ic_media_ff" />
+
         <ImageView
             android:id="@+id/ivChayVaDung"
             android:layout_width="35dp"
             android:layout_height="35dp"
-            android:src="@drawable/ic_play_arrow_red"
             android:layout_centerVertical="true"
             android:layout_marginRight="8dp"
-            android:background="@drawable/white_rounded_background"
-            android:layout_toLeftOf="@id/ivSangKeTiep"/>
+            android:layout_toLeftOf="@id/ivSangKeTiep"
+            android:src="@drawable/ic_play_arrow"
+            app:srcCompat="@android:drawable/ic_media_play" />
+
         <ImageView
             android:id="@+id/ivTroLaiTruoc"
             android:layout_width="25dp"
             android:layout_height="25dp"
-            android:src="@drawable/ic_skip_previous_red"
             android:layout_centerVertical="true"
             android:layout_marginRight="12dp"
-            android:background="@drawable/white_rounded_background"
-            android:layout_toLeftOf="@id/ivChayVaDung"/>
+            android:layout_toLeftOf="@id/ivChayVaDung"
+            android:src="@drawable/ic_skip_previous"
+            app:srcCompat="@android:drawable/ic_media_previous"
+            tools:srcCompat="@android:drawable/ic_media_rew" />
     </RelativeLayout>
     <SeekBar
         android:id="@+id/sbNhacDangNghe"

@@ -125,7 +125,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="4dp"
                 android:src="@drawable/ic_repeat"
-                android:translationX="30dp" />
+                android:translationX="30dp"
+                app:srcCompat="@drawable/ic_repeat"
+                tools:srcCompat="@drawable/ic_repeat" />
 
             <ImageView
                 android:id="@+id/ivTroLaiTruoc"
@@ -136,8 +138,9 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="24dp"
                 android:layout_toLeftOf="@id/ivChayVaDung"
-                android:background="@drawable/white_rounded_background"
-                android:src="@drawable/ic_skip_previous_red" />
+                android:src="@drawable/ic_skip_previous"
+                app:srcCompat="@drawable/ic_skip_previous"
+                tools:srcCompat="@drawable/ic_skip_previous" />
 
             <ImageView
                 android:id="@+id/ivChayVaDung"
@@ -146,9 +149,9 @@
                 android:layout_below="@id/ivXaoTron"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="8dp"
-                android:background="@drawable/white_rounded_background"
                 android:clickable="false"
-                android:src="@drawable/ic_pause_red" />
+                android:src="@drawable/ic_pause"
+                app:srcCompat="@drawable/ic_pause" />
 
             <ImageView
                 android:id="@+id/ivSangKeTiep"
@@ -159,8 +162,9 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="20dp"
                 android:layout_toRightOf="@id/ivChayVaDung"
-                android:background="@drawable/white_rounded_background"
-                android:src="@drawable/ic_skip_next_red" />
+                android:src="@drawable/ic_skip_next"
+                app:srcCompat="@drawable/ic_skip_next"
+                tools:srcCompat="@drawable/ic_skip_next" />
 
             <TextView
                 android:id="@+id/txtBinhLuan"
